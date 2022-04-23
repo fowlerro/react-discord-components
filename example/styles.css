@@ -1,0 +1,12 @@
+@font-face {
+	font-family: Twemoji;
+	src: url('./TwemojiMozilla.ttf');
+}
+
+html,
+body {
+	background-color: #36393f;
+	font-family: Roboto;
+	color: #dcddde;
+	text-align: center;
+}
