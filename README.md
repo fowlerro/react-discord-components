@@ -12,6 +12,8 @@ Discord's UI elements created in React.
 
 ## Demo
 
+### [Live demo](https://fowlerro.github.io/react-discord-components/)
+
 ![image](https://user-images.githubusercontent.com/54778147/164888923-1d06a0ab-415b-4d88-a7bd-45e9fc31988a.png)
 
 ## Installation
