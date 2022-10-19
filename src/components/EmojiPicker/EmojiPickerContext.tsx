@@ -4,7 +4,7 @@ import useLocalStorage from '../../hooks/useLocalStorage';
 
 import { theme } from '../../utils/theme';
 
-import type { EmojiType } from './EmojiPicker.types';
+import type { EmojiType } from '../Emoji';
 
 export type SetFrequentlyUsed = (
 	value: EmojiType[] | ((value: EmojiType[]) => EmojiType[])

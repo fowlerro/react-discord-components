@@ -17,9 +17,9 @@ import type {
 	EmojiPickerProps,
 	CategoryElements,
 	CustomCategory,
-	EmojiType,
 	CategoryNames,
 } from './EmojiPicker.types';
+import type { EmojiType } from '../Emoji/Emoji.types';
 
 const StyledEmojiPicker = styled('div')(({ theme }) => ({
 	fontFamily: theme.typography.font.primary,

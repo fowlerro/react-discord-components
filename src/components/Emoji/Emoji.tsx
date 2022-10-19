@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { getCustomEmoji } from '../../utils/discordEndpoints';
-import { EmojiType } from '../EmojiPicker/EmojiPicker.types';
+
+import { EmojiType } from '.';
 
 export type EmojiProps = {
 	emoji: EmojiType | string;

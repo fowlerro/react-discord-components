@@ -5,8 +5,10 @@ import SearchIcon from '../../Icons/SearchIcon';
 import XMarkIcon from '../../Icons/XMarkIcon';
 import { emojiNameWithColons } from '../../../utils/utils';
 
-import type { EmojiType, SetSearch, SetSelectedSkinTone } from '../EmojiPicker.types';
+import type { SetSearch, SetSelectedSkinTone } from '../EmojiPicker.types';
 import { EmojiPickerClasses } from '../EmojiPickerContext';
+
+import type { EmojiType } from '../../Emoji';
 
 interface HeaderProps {
 	activeEmoji: EmojiType;

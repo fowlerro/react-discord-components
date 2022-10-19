@@ -5,7 +5,8 @@ import { getCustomEmoji } from '../../../utils/discordEndpoints';
 
 import { emojiNameWithColons, getEmojiCharacter } from '../../../utils/utils';
 import { EmojiPickerClasses } from '../EmojiPickerContext';
-import { CustomCategory, EmojiType } from '../EmojiPicker.types';
+import { CustomCategory } from '../EmojiPicker.types';
+import type { EmojiType } from '../../Emoji';
 
 interface FooterProps {
 	activeEmoji: EmojiType;

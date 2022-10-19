@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import Twemoji from '../assets/TwemojiMozilla.ttf';
+import Twemoji from '../../assets/TwemojiMozilla.ttf';
 
-import { EmojiPicker } from '../components/EmojiPicker/EmojiPicker';
-import { EmojiPickerProps } from '../components/EmojiPicker/EmojiPicker.types';
+import { EmojiPicker, EmojiPickerProps } from '.';
+import type { EmojiType } from '../Emoji';
 
-import { Emoji } from '../components/Emoji/Emoji';
-import type { EmojiType } from '../components/EmojiPicker/EmojiPicker.types';
+import { Emoji } from '../Emoji/Emoji';
 
 const meta: Meta<EmojiPickerProps> = {
 	title: 'Emoji Picker',

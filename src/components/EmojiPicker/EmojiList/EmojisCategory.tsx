@@ -6,12 +6,13 @@ import {
 	CategoryNames,
 	CategoryRefs,
 	EmojiCategory,
-	EmojiType,
 	OnEmojiClick,
 	SetActiveEmoji,
 } from '../EmojiPicker.types';
 import { useEmojiPickerContext, EmojiPickerClasses } from '../EmojiPickerContext';
 import EmojiCategoryHeader from './EmojiCategoryHeader';
+
+import type { EmojiType } from '../../Emoji';
 
 interface EmojiCategoryProps {
 	refs: CategoryRefs;

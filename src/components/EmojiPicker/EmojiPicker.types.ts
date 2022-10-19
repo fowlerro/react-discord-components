@@ -1,28 +1,7 @@
 import type { MutableRefObject } from 'react';
 import type { Placement } from '@popperjs/core';
 import type { EmojiCategories } from './EmojiPickerContext';
-
-export interface Emoji {
-	name: string;
-	char: string;
-	hasTone?: boolean;
-	tones?: EmojiToneType[];
-}
-
-interface EmojiToneType {
-	name: Emoji['name'];
-	char: Emoji['char'];
-	tone: number[];
-}
-
-export interface CustomEmoji {
-	id: string;
-	name: string;
-	animated: boolean;
-	serverName?: string;
-}
-
-export type EmojiType = Emoji | CustomEmoji;
+import { EmojiType } from '../Emoji';
 
 export type CategoryNames = {
 	[category in EmojiCategories]: string;

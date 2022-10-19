@@ -1,9 +1,9 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import Twemoji from '../assets/TwemojiMozilla.ttf';
+import Twemoji from '../../assets/TwemojiMozilla.ttf';
 
-import { Emoji, EmojiProps } from '../components/';
+import { Emoji, EmojiProps } from '.';
 
 const meta: Meta<EmojiProps> = {
 	title: 'Emoji',
