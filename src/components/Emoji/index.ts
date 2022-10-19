@@ -1,2 +1,2 @@
-export { Emoji, EmojiProps, EmojiClasses } from './Emoji';
-export { EmojiType, DefaultEmoji, CustomEmoji } from './Emoji.types';
+export { Emoji, EmojiClasses } from './Emoji';
+export { EmojiProps, EmojiType, DefaultEmoji, CustomEmoji } from './Emoji.types';

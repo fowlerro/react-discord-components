@@ -1,3 +1,7 @@
+export type EmojiProps = {
+	emoji: EmojiType | string;
+} & React.ComponentPropsWithRef<'img'>;
+
 export interface DefaultEmoji {
 	name: string;
 	char: string;

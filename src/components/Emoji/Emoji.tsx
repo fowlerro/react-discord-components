@@ -1,72 +1,56 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import { getCustomEmoji } from '../../utils/discordEndpoints';
+import { getTwemojiURL, isCustomEmoji, isDefaultEmoji } from '../../utils/utils';
 
-import { EmojiType } from '.';
-
-export type EmojiProps = {
-	emoji: EmojiType | string;
-} & React.ComponentPropsWithRef<'span'>;
+import type { EmojiProps } from './Emoji.types';
 
 export const EmojiClasses = {
 	root: 'RDC-Emoji',
 };
 
-const StyledEmoji = styled.span<{ customEmoji?: string }>(({ customEmoji }) => ({
+const StyledEmoji = styled.img({
 	width: '48px',
 	height: '48px',
 	padding: 0,
 	background: 'none',
 	border: 0,
 	outline: 0,
-	position: 'relative',
-	lineHeight: '48px',
-	fontSize: '48px',
-	verticalAlign: 'bottom',
-	fontFamily: 'Twemoji',
-	margin: '.1rem',
 	display: 'inline-block',
 	cursor: 'default',
-	...(customEmoji && {
-		backgroundImage: `url(${customEmoji})`,
-		backgroundPosition: 'center',
-		backgroundSize: 'cover',
-	}),
-}));
+});
 
-export const Emoji = React.forwardRef<HTMLSpanElement, EmojiProps>(
+export const Emoji = React.forwardRef<HTMLImageElement, EmojiProps>(
 	({ emoji, className, ...props }, ref) => {
 		const classes = className ? `${EmojiClasses.root} ${className}` : EmojiClasses.root;
-		if (emoji) {
-			if (typeof emoji === 'string')
-				return (
-					<StyledEmoji ref={ref} className={classes} {...props}>
-						{emoji}
-					</StyledEmoji>
-				);
 
-			if ('char' in emoji)
-				return (
-					<StyledEmoji ref={ref} className={classes} {...props}>
-						{emoji.char}
-					</StyledEmoji>
-				);
-
-			if ('id' in emoji)
-				return (
-					<StyledEmoji
-						ref={ref}
-						className={classes}
-						{...props}
-						customEmoji={getCustomEmoji(emoji.id, emoji.animated)}
-					/>
-				);
+		if (typeof emoji === 'string' || isDefaultEmoji(emoji)) {
+			const emojiChar = isDefaultEmoji(emoji) ? emoji.char : emoji;
+			return (
+				<StyledEmoji
+					{...props}
+					ref={ref}
+					className={classes}
+					src={getTwemojiURL(emojiChar)}
+					alt={emojiChar}
+				/>
+			);
 		}
 
+		if (isCustomEmoji(emoji))
+			return (
+				<StyledEmoji
+					{...props}
+					ref={ref}
+					className={classes}
+					src={getCustomEmoji(emoji.id, emoji.animated)}
+					alt={emoji.name}
+				/>
+			);
+
 		return (
-			<StyledEmoji ref={ref} className={classes} {...props}>
-				😄
-			</StyledEmoji>
+			<StyledEmoji {...props} ref={ref} className={classes} src={getTwemojiURL('😄')} alt={'😄'} />
 		);
 	}
 );

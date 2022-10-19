@@ -1,8 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import Twemoji from '../../assets/TwemojiMozilla.ttf';
-
 import { Emoji, EmojiProps } from '.';
 
 const meta: Meta<EmojiProps> = {
@@ -13,18 +11,7 @@ const meta: Meta<EmojiProps> = {
 export default meta;
 
 const Template: Story<EmojiProps> = args => {
-	return (
-		<div style={{ margin: '1rem' }}>
-			<style>
-				{`@font-face {
-					font-family: 'Twemoji';
-					src: url(${Twemoji});
-				}
-				`}
-			</style>
-			<Emoji {...args} />
-		</div>
-	);
+	return <Emoji {...args} />;
 };
 
 export const Default = Template.bind({});
